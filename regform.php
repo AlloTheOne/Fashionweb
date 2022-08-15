@@ -1,5 +1,5 @@
 <?php
-    session_start();
+   
     include 'register.php';
     require_once 'header.php';
 ?>
@@ -13,7 +13,7 @@
         <title>Login | Register</title>
        
         </head>
-        <body class"back" style="background-image: url(photos/modern-neon-sign.jpg)">
+        <body class="back" style="background-image: url(photos/modern-neon-sign.jpg)">
 
 
 

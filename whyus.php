@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- parallax effect -->
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Parallax Effect | Pure CSS</title>
-        <link rel="stylesheet" href="whyustry2.css" />
-
-    </head>
-    <!-- end of parallax effect -->
-
+<?php
+ require_once 'header.php';
+?>
 
 
     <body>

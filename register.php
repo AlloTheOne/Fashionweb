@@ -1,10 +1,33 @@
 <?php 
 $invalid='';
 //session_destroy();
-session_status() === PHP_SESSION_ACTIVE ?: session_start();
+
 
 $conn= mysqli_connect("localhost","root","");
 $db=mysqli_select_db($conn,"Fashionweb");
+function emailExist($conn,$email,$id){
+    $sql = "SELECT * FROM customer WHERE email = ? or id = ?";
+    $stmt = mysqli_stmt_init($conn);
+     
+    if (!mysqli_stmt_prepare($stmt,$sql)) {
+        header("location: ../registration.php?error=stmtfailed2");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss",$email,$id);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($resultData)) {
+        return $row;
+    } else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
 if(isset($_POST['submit'])){
     session_destroy();
     session_start();
@@ -29,6 +52,7 @@ if(isset($_POST['submit'])){
     
     else {
      $SELECT = "SELECT email From customer Where email = ? Limit 1";
+     $emailExist = emailExist($conn,$email,$email);
      $query = "INSERT INTO customer(email, password,fname, lname) VALUES (?,?,?,?)";
      //Prepare statement
      $stmt = $conn->prepare($SELECT);
@@ -60,7 +84,8 @@ if(isset($_POST['submit'])){
     $_SESSION['message']= "You've Register Successfully!";
     $_SESSION['fname']= $f_name;
     $_SESSION['email']='';
-    header("location: login-access.php");
+    $_SESSION['id']=$emailExist['id'];
+    header("location: index.php");
 }
 
 ?>

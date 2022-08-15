@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include 'loginserver.php';
     require_once 'header.php';
 ?>

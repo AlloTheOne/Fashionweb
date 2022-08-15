@@ -1,3 +1,8 @@
+<?php 
+ session_status() === PHP_SESSION_ACTIVE ?: session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- parallax effect -->
@@ -13,7 +18,14 @@
 
 
     <body>
+    <?php 
+    $conn= mysqli_connect("localhost","root","");
+    $db=mysqli_select_db($conn,"Fashionweb");
+$sql = "SELECT * from customer where id = '".$_SESSION["id"]."'";
+$result = mysqli_query($conn, $sql);
 
+
+?>
 <!-- menu -->
 <div class="navbar">
 <!-- starting of the list -->
@@ -49,9 +61,20 @@
   </ul>
  </li>
   <li class="level1">
-  <a href="whyus.html">Why Us?</a>
+  <a href="whyus.php">Why Us?</a>
   </li>
 <li class="level1">
     <a href="loginform.php" class="login" style="text-decoration:none;"> <img  src="photos/baseline_login_white_18dp.png" id="fimg"> <img src="photos/baseline_login_black_18dp.png" id="secimg"> </a>
 </li>
+<li class="level1"></li>
+    <a href="logout.php" class="login" style="text-decoration:none; display:inline-block;"> <img  src="photos/outline_logout_white_24dp.png" id="fimg"> <img src="photos/outline_logout_black_24dp.png" id="secimg"> </a>
+</li>
+<?php 
+if (mysqli_num_rows($result)>0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        
+?>
+<li class="level1"> <a href="logout.php"><?php echo $_SESSION['fname']; ?>
+</a></li>
+</div><?php } }?>
 </div>

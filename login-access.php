@@ -1,16 +1,9 @@
 <?php
-    session_start();
+    
     require_once 'header.php';?> 
 
 
 
-  
-<li class="level1"></li>
-    <a href="logout.php" class="login" style="text-decoration:none; display:inline-block;"> <img  src="photos/outline_logout_white_24dp.png" id="fimg"> <img src="photos/outline_logout_black_24dp.png" id="secimg"> </a>
-</li>
-<li class="level1"> <a href="logout.php"><?php echo $_SESSION['fname']; ?>
-<?php echo $_SESSION['email']; ?></a></li>
-</div>
 
 
 <header style="background-image: url(photos/earth/Earth1.jpg)">

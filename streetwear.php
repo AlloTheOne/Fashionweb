@@ -2,28 +2,6 @@
  
  require_once 'header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<!-- parallax effect -->
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Street Wear</title>
-        <link rel="stylesheet" href="style2.css" />
-
-    </head>
-    <!-- end of parallax effect -->
-
-
-
-    <body >
-
-
-  
-<li class="level1"> <a href="logout.php"><?php echo $_SESSION['f_name']; ?>
-<?php echo $_SESSION['email']; ?></a></li>
-</div>
-</div>
 
 
 <header style="background-image: url(photos/streetwear/https___www.lifeofpix.com_wp-content_uploads_2021_01_IMG_20191226_221608.jpg)">

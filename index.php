@@ -1,5 +1,6 @@
 <?php 
-require_once 'header.php'?>
+require_once 'header.php';
+?>
 
 
 <header style="background-image: url(photos/earth/Earth1.jpg)">

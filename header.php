@@ -18,14 +18,7 @@
 
 
     <body>
-    <?php 
-    $conn= mysqli_connect("localhost","root","");
-    $db=mysqli_select_db($conn,"Fashionweb");
-$sql = "SELECT * from customer where id = '".$_SESSION["id"]."'";
-$result = mysqli_query($conn, $sql);
-
-
-?>
+    
 <!-- menu -->
 <div class="navbar">
 <!-- starting of the list -->
@@ -64,17 +57,27 @@ $result = mysqli_query($conn, $sql);
   <a href="whyus.php">Why Us?</a>
   </li>
 <li class="level1">
-    <a href="loginform.php" class="login" style="text-decoration:none;"> <img  src="photos/baseline_login_white_18dp.png" id="fimg"> <img src="photos/baseline_login_black_18dp.png" id="secimg"> </a>
+    <a href="loginform.php" class="login" style="text-decoration:none;"><!-- <img  src="photos/baseline_login_white_18dp.png" id="fimg"> <img src="photos/baseline_login_black_18dp.png" id="secimg"> --> Login </a>
 </li>
 <li class="level1"></li>
-    <a href="logout.php" class="login" style="text-decoration:none; display:inline-block;"> <img  src="photos/outline_logout_white_24dp.png" id="fimg"> <img src="photos/outline_logout_black_24dp.png" id="secimg"> </a>
+    <a href="logout.php" class="login" style="text-decoration:none; display:inline-block;"> <!--<img  src="photos/outline_logout_white_24dp.png" id="fimg"> <img src="photos/outline_logout_black_24dp.png" id="secimg"> --> Logout</a>
 </li>
 <?php 
+if (isset($_SESSION["id"])) {
+    
+    $conn= mysqli_connect("localhost","root","");
+    $db=mysqli_select_db($conn,"Fashionweb");
+$sql = "SELECT * from customer where id = '".$_SESSION["id"]."'";
+$result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result)>0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        
+      
+
 ?>
-<li class="level1"> <a href="logout.php"><?php echo $_SESSION['fname']; ?>
-</a></li>
-</div><?php } }?>
+<li class="level1"> <a href="logout.php"><?php echo $row['fname'];?>
+
+</a> <?php }}} ?>
+
+</li>
+</div>
 </div>

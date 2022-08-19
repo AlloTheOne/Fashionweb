@@ -195,6 +195,7 @@ header {
   width: 350px;
   height: 500px;
 }
+
 .items > a > h3,
 .items > a > p {
   text-decoration: none;
@@ -344,3 +345,14 @@ input[type='submit']:hover {
   color: grey;
 }
 /* ********************************************** */
+
+.productimg {
+  width: 20px;
+  height: 10px;
+}
+#proimg {
+  margin: 20px 20px 0px 20px;
+  padding: 20px 10px 0 10px;
+  width: 350px !important;
+  height: 500px !important;
+}

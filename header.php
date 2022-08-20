@@ -56,15 +56,14 @@
   <li class="level1">
   <a href="whyus.php">Why Us?</a>
   </li>
-<li class="level1">
+  <?php 
+if (!isset($_SESSION["id"])) { ?>
+    <li class="level1">
     <a href="loginform.php" class="login" style="text-decoration:none;"><!-- <img  src="photos/baseline_login_white_18dp.png" id="fimg"> <img src="photos/baseline_login_black_18dp.png" id="secimg"> --> Login </a>
 </li>
-<li class="level1"></li>
-    <a href="logout.php" class="login" style="text-decoration:none; display:inline-block;"> <!--<img  src="photos/outline_logout_white_24dp.png" id="fimg"> <img src="photos/outline_logout_black_24dp.png" id="secimg"> --> Logout</a>
-</li>
-<?php 
-if (isset($_SESSION["id"])) {
-    
+
+<?php
+}else {
     $conn= mysqli_connect("localhost","root","");
     $db=mysqli_select_db($conn,"Fashionweb");
 $sql = "SELECT * from customer where id = '".$_SESSION["id"]."'";
@@ -75,8 +74,13 @@ if (mysqli_num_rows($result)>0) {
 
 ?>
 <li class="level1"> <a href="logout.php"><?php echo $row['fname'];?>
-
+<li class="level1"></li>
+    <a href="logout.php" class="login" style="text-decoration:none; display:inline-block;"> <!--<img  src="photos/outline_logout_white_24dp.png" id="fimg"> <img src="photos/outline_logout_black_24dp.png" id="secimg"> --> Logout</a>
+</li>
 </a> <?php }}} ?>
+
+
+
 
 </li>
 </div>

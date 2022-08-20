@@ -21,7 +21,7 @@
 
       </a>
 
-      <a class="product" href="later" style="text-decoration:none">
+      <a class="product" href="itemView.php" style="text-decoration:none">
         <img src="photos/streetwear/https___www.lifeofpix.com_wp-content_uploads_2020_12_IMG_8451.jpg"  />
         <h3 >Checker Coat </h3> <h4 style=" font-size:15px;"> 400SAR </h4>  <br />
 

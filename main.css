@@ -313,9 +313,10 @@ header {
 .regform ::placeholder {
   color: white;
 }
+/*
 header .back {
   index-z: -999;
-}
+}*/
 
 input[type='text'],
 input[type='password'] {
@@ -351,8 +352,13 @@ input[type='submit']:hover {
   height: 10px;
 }
 #proimg {
-  margin: 20px 20px 0px 20px;
+  margin: 30px 20px 0px 30px;
   padding: 20px 10px 0 10px;
   width: 350px !important;
   height: 500px !important;
+}
+
+.proinfo {
+  margin: 30px 0px 0px 300px;
+  padding: 20px 10px 0 10px;
 }
